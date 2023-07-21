@@ -1,5 +1,8 @@
 ﻿@model WebMVC.ViewModels.ClienteViewModel
 
+@Html.HiddenFor(model => model.Endereco.Id)
+@Html.HiddenFor(model => model.Endereco.ClienteId)
+
 <div class="row mb-3">
     <div class="col-3">
         <div class="form-group">

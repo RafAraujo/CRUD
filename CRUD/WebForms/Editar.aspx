@@ -98,6 +98,7 @@
                     <h4>Endereço</h4>
                 </div>
             </div>
+            <asp:HiddenField ID="HidEnderecoId" runat="server" />
             <div class="row mb-3">
                 <div class="col-2">
                     <div class="form-group">

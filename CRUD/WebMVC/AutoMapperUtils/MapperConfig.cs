@@ -11,6 +11,7 @@ namespace WebMVC.AutoMapperUtils
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ClienteViewModel, Cliente>().ReverseMap();
+                cfg.CreateMap<EnderecoViewModel, Endereco>().ReverseMap();
             });
 
             return config;

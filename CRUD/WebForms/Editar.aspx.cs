@@ -52,6 +52,7 @@ namespace WebForm
             DdlSexo.SelectedValue = cliente.Sexo;
             DdlEstadoCivil.SelectedValue = cliente.EstadoCivil;
 
+            HidEnderecoId.Value = cliente.Endereco.Id.ToString();
             TxtCep.Text = cliente.Endereco.Cep;
             TxtLogradouro.Text = cliente.Endereco.Logradouro;
             TxtNumero.Text = cliente.Endereco.Numero;
@@ -107,6 +108,8 @@ namespace WebForm
 
         protected void BtnEditar_Click(object sender, EventArgs e)
         {
+            var id = int.Parse(Request.QueryString["id"]);
+
             DateTime? dataExpedicao = null;
             if (DateTime.TryParse(TxtDataExpedicao.Text, out DateTime value))
             {
@@ -121,7 +124,7 @@ namespace WebForm
 
             var cliente = new Cliente
             {
-                Id = int.Parse(Request.QueryString["id"]),
+                Id = id,
                 Cpf = TxtCpf.Text,
                 Nome = TxtNome.Text,
                 Rg = TxtRg.Text,
@@ -133,6 +136,8 @@ namespace WebForm
                 EstadoCivil = DdlEstadoCivil.SelectedValue,
                 Endereco = new Endereco
                 {
+                    Id = int.Parse(HidEnderecoId.Value),
+                    ClienteId = id,
                     Cep = TxtCep.Text,
                     Logradouro = TxtLogradouro.Text,
                     Numero = TxtNumero.Text,

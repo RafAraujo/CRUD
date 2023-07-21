@@ -140,7 +140,7 @@ namespace Data
                                 Cidade = @Cidade,
                                 UfId = @UfId
                             WHERE
-                                ClienteId = @ClienteId";
+                                Id = @Id";
 
                     await connection.ExecuteAsync(sql, cliente.Endereco, transaction);
 
@@ -164,7 +164,7 @@ namespace Data
                     await connection.ExecuteAsync(sql, new { Id = id }, transaction);
 
                     sql = @"DELETE FROM Cliente WHERE Id = @Id";
-                    connection.Execute(sql, new { Id = id }, transaction);
+                    await connection.ExecuteAsync(sql, new { Id = id }, transaction);
 
                     transaction.Commit();
                 }
