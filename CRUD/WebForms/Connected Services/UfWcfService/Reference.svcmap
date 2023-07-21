@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="51e9a253-b6d3-4a9a-93a8-bfa2483606f6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52801/UfWcfService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UfWcfService.xsd" MetadataType="Schema" ID="e3d3e0ad-d941-4917-9387-835abae6d896" SourceId="1" SourceUrl="http://localhost:52801/UfWcfService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UfWcfService.disco" MetadataType="Disco" ID="2b08d338-2681-48f8-8860-425b5bca3307" SourceId="1" SourceUrl="http://localhost:52801/UfWcfService.svc?disco" />
+    <MetadataFile FileName="UfWcfService.wsdl" MetadataType="Wsdl" ID="5a5a74a0-042e-4a3e-b976-d410962030c6" SourceId="1" SourceUrl="http://localhost:52801/UfWcfService.svc?wsdl" />
+    <MetadataFile FileName="UfWcfService1.xsd" MetadataType="Schema" ID="c23b5f74-adbb-4ee0-9756-66785fc1898d" SourceId="1" SourceUrl="http://localhost:52801/UfWcfService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UfWcfService2.xsd" MetadataType="Schema" ID="04c57053-ac94-4253-bf97-24637b5168a2" SourceId="1" SourceUrl="http://localhost:52801/UfWcfService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UfWcfService3.xsd" MetadataType="Schema" ID="10b59b77-8c4d-475c-b637-bf99198b0f9a" SourceId="1" SourceUrl="http://localhost:52801/UfWcfService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

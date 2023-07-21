@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Domain.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Domain.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52801/ClienteWcfService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Domain.Models.Base" />
+  <xs:complexType name="ArrayOfCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cliente" nillable="true" type="tns:Cliente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCliente" nillable="true" type="tns:ArrayOfCliente" />
+  <xs:complexType name="Cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Domain.Models.Base" base="q1:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cpf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DataExpedicao" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataNascimento" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Endereco" nillable="true" type="tns:Endereco" />
+          <xs:element minOccurs="0" name="EstadoCivil" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgaoExpedicao" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Rg" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sexo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UfExpedicao" nillable="true" type="tns:Uf" />
+          <xs:element minOccurs="0" name="UfExpedicaoId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="Endereco">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Domain.Models.Base" base="q2:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Bairro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cep" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cidade" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClienteId" type="xs:int" />
+          <xs:element minOccurs="0" name="Complemento" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Logradouro" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Numero" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Uf" nillable="true" type="tns:Uf" />
+          <xs:element minOccurs="0" name="UfId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Endereco" nillable="true" type="tns:Endereco" />
+  <xs:complexType name="Uf">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Domain.Models.Base" base="q3:Entity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sigla" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Uf" nillable="true" type="tns:Uf" />
+</xs:schema>

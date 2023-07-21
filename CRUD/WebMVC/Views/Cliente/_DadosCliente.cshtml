@@ -1,0 +1,132 @@
+﻿@model WebMVC.ViewModels.ClienteViewModel
+
+<div class="row mb-3">
+    <div class="col-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cpf, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Cpf, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Cpf, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Nome, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rg, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Rg, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Rg, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataExpedicao, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.DataExpedicao, new { htmlAttributes = new { @class = "form-control", @type = "date", @Value = Model?.DataExpedicao?.ToString("yyyy-MM-dd") } })
+            @Html.ValidationMessageFor(model => model.DataExpedicao, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.OrgaoExpedicao, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.OrgaoExpedicao, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.OrgaoExpedicao, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="form-group">
+            @Html.LabelFor(model => model.UfExpedicaoId, htmlAttributes: new { @class = "form-label" })
+            @Html.DropDownListFor(model => model.UfExpedicaoId, (SelectList)ViewBag.ListaUf, "", new { @class = "form-select" })
+            @Html.ValidationMessageFor(model => model.UfExpedicaoId, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control", @type = "date", @Value = Model?.DataNascimento.ToString("yyyy-MM-dd") } })
+            @Html.ValidationMessageFor(model => model.DataNascimento, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "form-label" })
+            @Html.DropDownListFor(model => model.Sexo, (SelectList)ViewBag.ListaSexo, "", new { @class = "form-select" })
+            @Html.ValidationMessageFor(model => model.Sexo, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.EstadoCivil, htmlAttributes: new { @class = "form-label" })
+            @Html.DropDownListFor(model => model.EstadoCivil, (SelectList)ViewBag.ListaEstadoCivil, "", new { @class = "form-select" })
+            @Html.ValidationMessageFor(model => model.EstadoCivil, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+</div>
+<div class="row mt-3 mb-3">
+    <div class="col">
+        <h4>Endereço</h4>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-2">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.Cep, htmlAttributes: new { @class = "form-label" })
+            <div class="input-group">
+                @Html.EditorFor(model => model.Endereco.Cep, new { htmlAttributes = new { @class = "form-control" } })
+                <button type="button" class="btn btn-secondary" title="Pesquisar"><span class="bi-search"></span></button>
+            </div>
+            @Html.ValidationMessageFor(model => model.Endereco.Cep, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+</div>
+<div class="row mb-3">
+    <div class="col-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.Logradouro, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Endereco.Logradouro, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Endereco.Logradouro, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-2 col-xl-1">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.Numero, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Endereco.Numero, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Endereco.Numero, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.Complemento, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Endereco.Complemento, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Endereco.Complemento, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-2 col-xl-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.Bairro, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Endereco.Bairro, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Endereco.Bairro, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.Cidade, htmlAttributes: new { @class = "form-label" })
+            @Html.EditorFor(model => model.Endereco.Cidade, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Endereco.Cidade, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+    <div class="col-1">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco.UfId, htmlAttributes: new { @class = "form-label" })
+            @Html.DropDownListFor(model => model.Endereco.UfId, (SelectList)ViewBag.ListaUf, "", new { @class = "form-select" })
+            @Html.ValidationMessageFor(model => model.Endereco.UfId, null, new { @class = "form-text text-danger" })
+        </div>
+    </div>
+</div>

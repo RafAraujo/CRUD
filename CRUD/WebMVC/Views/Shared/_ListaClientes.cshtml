@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WebMVC.ViewModels.ClienteViewModel>
+
+<table class="table table-hover align-middle">
+    <tr class="text-center">
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco.EnderecoCompleto)
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href="@Url.Action("Visualizar", new { id = item.Id })" class="btn btn-outline-secondary"><span class="bi-list"></span></a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rg)
+        </td>
+        <td>
+            @item.DataNascimento.ToShortDateString()
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco.EnderecoCompleto)
+        </td>
+        <td>
+            <a href="@Url.Action("Editar", new { id = item.Id })" class="btn btn-outline-primary"><span class="bi-pencil"></span></a>
+        </td>
+        <td>
+            <a href="@Url.Action("Excluir", new { id = item.Id })" class="btn btn-outline-danger"><span class="bi-trash"></span></a>
+        </td>
+    </tr>
+}
+
+</table>
